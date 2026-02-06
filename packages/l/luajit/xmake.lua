@@ -17,13 +17,14 @@ package("luajit")
         add_syslinks("dl")
     end
 
-    if on_check then
-        on_check(function (package)
-            if package:is_arch("arm.*") then
-                raise("package(luajit/arm64) unsupported arch")
+    on_check(function (package)
+        if package:is_arch("arm.*") then
+            -- only way to enable macOS arm64 support (otherwise it is blocked)
+            if not (package:is_plat("macosx") and package:is_arch("arm64")) then
+                raise("package(luajit/arm) unsupported arch")
             end
-        end)
-    end
+        end
+    end)
 
     on_load(function (package)
         package:addenv("PATH", "bin")
