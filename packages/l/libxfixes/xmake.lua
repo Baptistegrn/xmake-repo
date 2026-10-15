@@ -2,7 +2,8 @@ package("libxfixes")
     set_homepage("https://www.x.org/")
     set_description("X.Org: Header files for the XFIXES extension")
 
-    set_urls("https://www.x.org/archive/individual/lib/libXfixes-$(version).tar.gz")
+    set_urls("https://www.x.org/archive/individual/lib/libXfixes-$(version).tar.gz",
+    "https://www.x.org/archive/individual/lib/libXfixes-$(version).tar.gz")
     add_versions("6.0.0", "82045da5625350838390c9440598b90d69c882c324ca92f73af9f0e992cb57c7")
     add_versions("6.0.1", "e69eaa321173c748ba6e2f15c7cf8da87f911d3ea1b6af4b547974aef6366bec")
 
